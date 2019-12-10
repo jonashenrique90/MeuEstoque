@@ -5,11 +5,10 @@
     <div class="row justify-content-center">
       <div class="col-md-4">
         <div class="card">
-          <div class="card-header">Dashboard</div>
+          <div class="card-header">Menu</div>
 
           <div class="card-body">
             <ul class="list-unstyled components">
-              <p>Dummy Heading</p>
               <li class="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
