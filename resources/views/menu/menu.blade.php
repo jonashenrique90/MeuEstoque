@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @stack('scripts')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,10 +19,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('front/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm m-0">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                   MEU ESTOQUE
@@ -72,9 +74,15 @@
             </div>
         </nav>
 
-        <main class="py-4">
-             @yield('content')
-         </main>
+        <main class="">
+          <div class="wrapper">
+            @include('nav.nav')
+            <div id="content" class="m-2">
+              @yield('content')
+            </div>
+          </div>
+          </div>
+        </main>
     </div>
 </body>
 </html>
