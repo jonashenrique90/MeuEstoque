@@ -1,8 +1,13 @@
 @extends('menu.menu')
 
 @section('content')
-    <div class="p-2 m-2">
-      <h2 class="text-center">Lista de Produtos</h2>
+    <div class="d-flex flex-row">
+      <div class="p-2 col">
+        <h2 class="text-center">Lista de Produtos</h2>
+      </div>
+      <div class="p-2">
+        <a target="_blank" href="{{ route('products.print')}}">IMPRIMIR</a>
+      </div>
     </div>
     <div class="list-group">
         @forelse ($products as $product)
