@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Product;
 use Illuminate\Http\Request;
+use PDF;
 
 class ProductsController extends Controller
 {
@@ -104,4 +105,27 @@ class ProductsController extends Controller
         'user_id' => 'required'
       ]);
     }
+
+    public function print()
+{
+   // This  $data array will be passed to our PDF blade
+
+   $user = Auth::user();
+   // dd($user);
+   // $products = Product::where('user_id', $user->id)->orderBy('name');
+
+   $data = [
+      'user' =>$user,
+      'products' =>Product::where('user_id', $user->id)->orderBy('name')->get(),
+      'date' => $date = date('d/m/y'),
+      'hour' => $hour = date('H:i'),
+      'title' => 'Lista de Produtos',
+      'heading' => 'MEU ESTOQUE',
+        ];
+
+    $pdf = PDF::loadView('pdf.products_pdf', $data)->setPaper('a4', 'portrait');
+    return $pdf->stream('Produtos.pdf');
+
+}
+
 }
