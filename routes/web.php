@@ -21,7 +21,3 @@ Route::resource('products', 'ProductsController')->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-
-
-// PDF
-Route::get('/print-pdf', [ 'as' => 'products.printpdf', 'uses' => 'ProductsController@print'])->middleware('auth');

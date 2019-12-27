@@ -2,16 +2,7 @@
 
 @section('content')
     <div class="p-2 m-2">
-      <div class="d-flex flex-row">
-        <div class="p-2 col">
-          <h2 class="text-center">Lista de Produtos</h2>
-        </div>
-        @if (@sizeof($products) != 0)
-          <div class="p-2">
-            <a class="justify-content-center" target="_blank" href="{{ route('products.printpdf') }}">IMPRIMIR</a>
-          </div>
-        @endif
-      </div>
+      <h2 class="text-center">Lista de Produtos</h2>
     </div>
     <div class="list-group">
         @forelse ($products as $product)
