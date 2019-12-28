@@ -7,11 +7,11 @@
     <ul class="list-unstyled components">
         <li>
             <a href="{{ route('products.create')}}">
-                <i class="fas fa-briefcase"></i>
+                <i class="fas fa-plus-circle"></i>
                 Adicionar Produto
             </a>
             <a href="/products">
-                <i class="fas fa-briefcase"></i>
+                <i class="fas fa-clipboard-list"></i>
                 Lista de Produtos
             </a>
         </li>
