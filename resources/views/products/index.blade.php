@@ -5,9 +5,11 @@
       <div class="p-2 col">
         <h2 class="text-center">Lista de Produtos</h2>
       </div>
-      <div class="p-2">
-        <a target="_blank" href="{{ route('products.print')}}">IMPRIMIR</a>
-      </div>
+      @if (@sizeof($products) != 0)
+        <div class="p-2">
+          <a data-toggle="tooltip" data-placement="top" title="Imprimir" target="_blank" href="{{ route('products.print')}}"><i class="fas fa-print fa-lg"></i></a>
+        </div>
+      @endif
     </div>
     <div class="list-group">
         @forelse ($products as $product)
