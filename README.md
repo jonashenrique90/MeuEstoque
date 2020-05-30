@@ -1,3 +1,5 @@
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
@@ -6,6 +8,40 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
+
+
+## GUIA DE INSTALAÇÃO
+
+Após clonar o projeto entre na pasta e execute:
+
+ ```bash
+ $ composer update
+ $ npm install
+ $ cp .env.example .env
+ $ php artisan key:generate
+```
+- Configurar conexão no arquivo .env
+
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=meuEstoqueDb
+DB_USERNAME=root
+DB_PASSWORD=root
+```
+
+- Executar as Migrations
+
+```bash
+$ php artisan migrate
+```
+- Server
+
+```bash
+$ php artisan serve
+```
+
 
 ## About Laravel
 
